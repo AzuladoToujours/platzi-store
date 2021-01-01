@@ -13,6 +13,14 @@ git:
 
 script:
   - yarn build
+
+notifications:
+  email:
+    recipients:
+      - camiloa.mejia@udea.edu.co
+    on_success: always
+    on_failure: always
+
 deploy:
   provider: pages
   skip_cleanup: true
@@ -21,6 +29,6 @@ deploy:
   github_token: $GITHUB_TOKEN
   local-dir: dist/
   target-branch: gh-pages
-  commit_message: "Deploy"
+  commit_message: "Project's Deploy"
   on:
     branch: master
